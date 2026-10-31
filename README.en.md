@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/icon-180.png" width="96" alt="Plugin Dock"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/icon-180.png" width="96" alt="Plugin Dock"></p>
 
 <h1 align="center">Plugin Dock · 插件坞</h1>
 
