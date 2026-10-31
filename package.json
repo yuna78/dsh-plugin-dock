@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-dock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plugin Dock for DSH Web: collects every plugin's left-sidebar entry into one collapsible floating window, with a switch that hides the original icon column and an installed-plugins list that deep-links into the Plugins panel.",
   "icon": "icon.svg",
   "keywords": [

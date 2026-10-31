@@ -7,15 +7,15 @@ The more DSH plugins you install, the longer that column of plugin icons in the 
 - **Collapsed** – a small pill with an entry-count badge, out of the way;
 - **Expanded** – a list; click a row to switch to that plugin's panel, with the current panel highlighted;
 - **Switch at the top** decides who owns the sidebar:
-  - **On** (default) – plugins keep their own sidebar entries; the window is just an extra launcher;
-  - **Off** – "dock mode": the original icon column is hidden and every entry lives in this card;
+  - **Off** (default) – "dock mode": the original icon column is hidden and every entry lives in this card;
+  - **On** – plugins keep their own sidebar entries; the window is just an extra launcher;
 - **"Installed plugins" section** – every bundle installed in the current profile (including those without a sidebar entry); click a row to deep-link into its detail page in the Plugins panel.
 
 ```
 ┌────────────────────────────────┐
 │ ◈ Plugin Dock          ←   —  │  ← drag the header to move
 ├────────────────────────────────┤
-│ Keep sidebar entries      [ ●] │  ← off = dock mode
+│ Keep sidebar entries      [○ ] │  ← off by default = dock mode
 ├────────────────────────────────┤
 │ Panels                         │
 │  [P] Plugins          ↗        │  ← click = switch panel

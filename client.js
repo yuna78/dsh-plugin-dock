@@ -12,7 +12,11 @@ window.__ModuleLoader__.load({
     const WIDTH = 296;
     /** Browser-persisted preferences (per browser, no Host state). */
     const STORE = {
-      respect: 'dsh-plugin-dock.respect',
+      /**
+       * 0.1.0 用 `dsh-plugin-dock.respect` 存过 true；键名加 `-mode` 才能让 0.1.1 的新默认值
+       * 对老用户也生效（否则读到旧值，开关还是“开”）。
+       */
+      respect: 'dsh-plugin-dock.respect-mode',
       collapsed: 'dsh-plugin-dock.collapsed',
       pos: 'dsh-plugin-dock.pos',
       installedOpen: 'dsh-plugin-dock.installed-open',
@@ -334,7 +338,7 @@ window.__ModuleLoader__.load({
         readFlag(STORE.collapsed, true),
       );
       const [respect, setRespect] = React.useState(() =>
-        readFlag(STORE.respect, true),
+        readFlag(STORE.respect, false),
       );
       const [installedOpen, setInstalledOpen] = React.useState(() =>
         readFlag(STORE.installedOpen, false),

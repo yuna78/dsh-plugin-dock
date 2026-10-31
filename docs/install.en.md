@@ -38,7 +38,7 @@ dsh plugin --profile web remove dsh-plugin-dock
 
 ## Confirm it is installed
 
-1. A "Plugin Dock" pill appears in the bottom-right corner;
+1. A "Plugin Dock" pill appears in the bottom-right corner and **the sidebar plugin icon column is already hidden** (dock mode is on by default);
 2. The **Plugins** panel shows a "Plugin Dock / 插件坞" card with an icon;
 3. Expanding the pill lists the registered panels.
 
