@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Plugin Dock",
+    "description": "Collects every plugin's left-sidebar entry into one collapsible floating window; click a row to switch panels. The switch decides whether plugins keep their own sidebar entries."
+  }
+}

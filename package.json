@@ -1,0 +1,78 @@
+{
+  "name": "dsh-plugin-dock",
+  "version": "0.1.0",
+  "description": "Plugin Dock for DSH Web: collects every plugin's left-sidebar entry into one collapsible floating window, with a switch that hides the original icon column and an installed-plugins list that deep-links into the Plugins panel.",
+  "icon": "icon.svg",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "sidebar",
+    "launcher",
+    "dock",
+    "panel",
+    "overlay",
+    "ui",
+    "productivity",
+    "插件坞",
+    "侧栏",
+    "入口"
+  ],
+  "homepage": "https://github.com/yuna78/dsh-plugin-dock#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuna78/dsh-plugin-dock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuna78/dsh-plugin-dock/issues"
+  },
+  "author": "Yuna",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/",
+    "icon.svg",
+    "docs/",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.1-rc.2 <0.3.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.1-rc.2 <0.3.0"
+  },
+  "scripts": {
+    "verify": "node verify/smoke.mjs",
+    "prepublishOnly": "node verify/smoke.mjs"
+  }
+}

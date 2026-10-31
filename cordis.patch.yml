@@ -1,0 +1,3 @@
+- insert:
+    - id: dsh-plugin-dock
+      name: 'dsh-plugin-dock'
