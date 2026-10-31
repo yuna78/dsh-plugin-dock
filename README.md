@@ -1,30 +1,29 @@
-# 插件坞 · Plugin Dock
+<p align="center"><img src="assets/icon-180.png" width="96" alt="Plugin Dock"></p>
 
-> DSH Web 的**左侧栏入口收纳器**：把所有插件在左侧栏的入口收进一个可折叠的浮动小窗口，平时缩成右下角一颗小胶囊。
+<h1 align="center">插件坞 · Plugin Dock</h1>
 
-DSH 装得越多，左侧栏那排插件图标就越长——每加一个插件多一个入口，想找某个面板得在图标堆里认。插件坞把它们收进一张卡片：
+<p align="center">
+  <a href="https://www.npmjs.com/package/dsh-plugin-dock"><img src="https://img.shields.io/npm/v/dsh-plugin-dock?color=2f6fed&label=npm" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/dsh-plugin-dock"><img src="https://img.shields.io/npm/dm/dsh-plugin-dock?color=2f6fed&label=downloads" alt="npm downloads"></a>
+  <img src="https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.2%20%3C0.3.0-2f6fed" alt="DSH >=0.2.1-rc.2 <0.3.0">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2f6fed" alt="MIT"></a>
+</p>
 
-- **收起态**只是右下角一颗小胶囊（带入口数量角标），不占地方；
-- **展开态**是一张列表：点一行直接切到那个插件的面板，当前所在的面板会高亮；
-- **顶部开关**决定「谁说了算」：
-  - **关**（默认）= 以插件坞为主：左侧栏那排图标整体收起，所有入口只在这张卡片里；
-  - **开** = 尊重插件自己的设定，左侧栏入口照旧，窗口只是多一个快捷入口；
-- **第二段「已安装插件」**：列出当前 profile 里所有已安装的插件（包括没有侧栏入口的那些），点一行直接打开它在 Plugins 面板里的详情页。
+<p align="center">
+  把 DSH 左侧栏那一排插件入口，收进右下角一张可折叠的浮卡。<br>
+  <b>装好即接管</b>：左侧栏立刻清空，所有入口只在这一张卡片里。
+</p>
 
-```
-┌────────────────────────────────┐
-│ ◈ 插件坞               ←   —  │  ← 拖动标题栏可移动位置
-├────────────────────────────────┤
-│ 尊重插件侧栏入口          [○ ] │  ← 默认关 = 集中模式
-├────────────────────────────────┤
-│ 面板入口                       │
-│  [插] 插件            ↗        │  ← 点一行 = 切到该面板
-│  [日] 日程            ↗        │
-│  [g] gitee dashboard  ↗        │
-├────────────────────────────────┤
-│ 已安装插件 · 18         ▸      │  ← 默认折叠
-└────────────────────────────────┘
-```
+![插件坞在 DSH Web 里展开的样子](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/hero.png)
+
+## 为什么装它
+
+DSH 装得越多，左侧栏那排插件图标就越长——每加一个插件多一个入口，想找某个面板得在图标堆里认，还会和会话列表抢宽度。插件坞把这排入口收进一张卡片：
+
+- **平时只是一颗小胶囊**（带入口数量角标），不占地方；
+- **点开是一张列表**：点一行直接切到那个插件的面板，当前所在面板高亮；
+- **装好就生效**：开关默认关闭 = 集中模式，左侧栏那排图标收起，所有入口都在这张卡片里；想恢复插件自己的侧栏入口，把开关打开就行（立即生效）；
+- **还多一段「已安装插件」**：当前 profile 里装了什么、哪个开着，一目了然；点一行跳到它在 Plugins 面板里的详情页。
 
 ## 安装
 
@@ -34,19 +33,32 @@ DSH 装得越多，左侧栏那排插件图标就越长——每加一个插件�
 dsh plugin --profile web add dsh-plugin-dock
 ```
 
-装完**刷新页面**，右下角会出现「插件坞」胶囊。也可以：
+装完刷新页面，右下角会出现「插件坞」胶囊。也可以：
 
-- 在 DSH 的 **Add plugin** 弹窗里搜 npm 包名 `dsh-plugin-dock`；
+- 在 DSH 的 **Add plugin** 弹窗里搜包名 `dsh-plugin-dock`；
 - 从插件市场（awesome-dsh-plugin）安装；
 - 本地开发用 `link:` 安装，见 [docs/install.md](docs/install.md)。
 
-## 使用
+## 看一眼
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/collapsed.png" width="640" alt="收起态">
+  <br><sub>收起态：界面几乎和平时一样，只是右下角多一颗胶囊</sub>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card.png" width="320" alt="展开的卡片">
+  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card-installed.png" width="320" alt="已安装插件列表">
+  <br><sub>左：面板入口，点一行就切过去 · 右：已安装插件，带状态点，点一行进详情页</sub>
+</p>
+
+## 怎么用
 
 | 动作 | 结果 |
 | --- | --- |
 | 点胶囊 | 展开卡片 |
 | 按住胶囊 / 标题栏拖动 | 移动窗口（自动限制在视口内） |
-| 点某一行面板 | `layout.selectPanel(id)` 切到那个面板 |
+| 点某一行面板 | 切到那个面板 |
 | 点「←」 | 主区域切回对话 |
 | 点「—」 | 收回胶囊 |
 | 切开关 | 集中模式开 / 关（立即生效） |
@@ -68,7 +80,7 @@ dsh plugin --profile web add dsh-plugin-dock
 2. **侧栏底部的动作按钮不纳入**。`sidebar.footer.action` 里的是插件自己渲染的**动作按钮**（点击执行插件内部逻辑），不是可跳转的页面；slot API 不允许别的插件代为渲染或触发别人的组件，所以这里只收纳「面板入口」。
 3. 插件图标是各插件自己的组件实例，另一个插件无法渲染 → 面板行用「首字」做占位徽标；已安装插件那段用 Host 提供的 base64 图标。
 4. 面板行与安装包之间没有公开的归属关系（无法从包名映射到 panel id），所以两段分开显示，不做去重。
-5. 视觉与交互无法自动化验证；`verify/smoke.mjs` 只覆盖契约与静态检查。
+5. 截图来自真实运行页面（隔离 profile + 无头 Chrome 实拍），但视觉与交互仍无法自动化断言；`verify/smoke.mjs` 只覆盖契约与静态检查。
 
 ## 开发
 
