@@ -29,15 +29,14 @@ dsh plugin --profile web add dsh-plugin-dock
 - 从插件市场（awesome-dsh-plugin）安装；
 - 本地开发用 `link:` 安装，见 [docs/install.md](docs/install.md)。
 
-## 看一眼
+## 一眼看懂
 
-**收起态**——界面几乎和平时一样，只是右下角多一颗胶囊：
+左边是展开的卡片，右边是收起后的样子——都只是右下角那一小块：
 
-![收起态：右下角一颗胶囊](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/collapsed.png)
+![展开 vs 收起](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/compare-zh.jpg)
 
-**卡片本身**——上面是面板入口，点一行就切过去；下面是已安装插件（带运行状态点），点一行进详情页：
-
-![展开的卡片](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card.png) ![已安装插件列表](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card-installed.png)
+- **展开**：面板入口一排排列出来，点一行就切过去；下面还有「已安装插件」，带运行状态点。
+- **收起**：整张卡缩成一颗胶囊，只占右下角一点地方，角标 `4` 是入口数量。
 
 ## 怎么用
 

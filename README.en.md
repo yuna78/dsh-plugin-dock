@@ -29,15 +29,14 @@ Reload the page and the pill shows up in the bottom-right corner. Alternatively:
 - install from the plugin market (awesome-dsh-plugin);
 - for local development use a `link:` install, see [docs/install.en.md](docs/install.en.md).
 
-## A closer look
+## At a glance
 
-**Collapsed** — the UI looks the same, plus one pill in the corner:
+On the left the card expanded, on the right the same thing collapsed — both just a small corner of the window:
 
-![Collapsed: one pill in the bottom-right corner](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/collapsed.png)
+![Expanded vs collapsed](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/compare-en.jpg)
 
-**The card itself** — panel entries on top (click a row to switch), installed plugins below with status dots (click a row for details):
-
-![Expanded card](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card.png) ![Installed plugins](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card-installed.png)
+- **Expanded**: every panel entry listed, click a row to switch; installed plugins below, with status dots.
+- **Collapsed**: the whole card folds into one pill; the `4` badge is the entry count.
 
 ## Usage
 
