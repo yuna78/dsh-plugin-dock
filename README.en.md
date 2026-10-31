@@ -1,20 +1,10 @@
-<p align="center"><img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/icon-180.png" width="96" alt="Plugin Dock"></p>
+# Plugin Dock · 插件坞
 
-<h1 align="center">Plugin Dock · 插件坞</h1>
+> Every plugin's left-sidebar entry in the DSH Web GUI, collected into one collapsible floating card. **Takes over on install** — the icon column is hidden right away and every entry lives in the card.
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/dsh-plugin-dock"><img src="https://img.shields.io/npm/v/dsh-plugin-dock?color=2f6fed&label=npm" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/dsh-plugin-dock"><img src="https://img.shields.io/npm/dm/dsh-plugin-dock?color=2f6fed&label=downloads" alt="npm downloads"></a>
-  <img src="https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.2%20%3C0.3.0-2f6fed" alt="DSH >=0.2.1-rc.2 <0.3.0">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2f6fed" alt="MIT"></a>
-</p>
+[![npm version](https://img.shields.io/npm/v/dsh-plugin-dock?color=2f6fed&label=npm)](https://www.npmjs.com/package/dsh-plugin-dock) [![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.2%20%3C0.3.0-2f6fed)](docs/compat.md) [![MIT](https://img.shields.io/badge/license-MIT-2f6fed)](LICENSE)
 
-<p align="center">
-  Every plugin's left-sidebar entry in the DSH Web GUI, collected into one collapsible floating card.<br>
-  <b>Takes over on install</b>: the icon column is hidden right away and every entry lives in the card.
-</p>
-
-![Plugin Dock expanded in the DSH Web GUI](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/hero.png)
+![Plugin Dock: the highlighted card in the bottom-right corner holds every plugin entry](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/hero.png)
 
 ## Why
 
@@ -41,16 +31,13 @@ Reload the page and the pill shows up in the bottom-right corner. Alternatively:
 
 ## A closer look
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/collapsed.png" width="640" alt="Collapsed state">
-  <br><sub>Collapsed: the UI looks the same, plus one pill in the corner</sub>
-</p>
+**Collapsed** — the UI looks the same, plus one pill in the corner:
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card.png" width="320" alt="Expanded card">
-  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card-installed.png" width="320" alt="Installed plugins">
-  <br><sub>Left: panel entries, click a row to switch · Right: installed plugins with status dots, click a row for details</sub>
-</p>
+![Collapsed: one pill in the bottom-right corner](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/collapsed.png)
+
+**The card itself** — panel entries on top (click a row to switch), installed plugins below with status dots (click a row for details):
+
+![Expanded card](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card.png) ![Installed plugins](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card-installed.png)
 
 ## Usage
 
@@ -80,7 +67,7 @@ Internal contract and fallbacks: [docs/compat.md](docs/compat.md).
 2. **Footer action buttons are not collected.** Entries in `sidebar.footer.action` are per-plugin **action components** (clicking runs plugin-internal logic), not addressable panels; the slot API does not let one plugin render or trigger another's components. Only panel entries are collected.
 3. Panel icons are each plugin's own component instance and cannot be rendered by another plugin, so panel rows use a first-character badge; the installed list uses host-provided base64 icons.
 4. There is no public mapping between a panel row and its npm package, so the two sections are listed separately rather than de-duplicated.
-5. Screenshots are captured from the real running page (isolated profile + headless Chrome), but visuals and interaction still cannot be asserted automatically; `verify/smoke.mjs` covers contract and static checks only.
+5. Screenshots are captured from a **real running DSH page** (isolated profile, headless Chrome, CDP-driven interaction) — not composited mock-ups. Visuals and interaction still cannot be asserted automatically; `verify/smoke.mjs` covers contract and static checks only.
 
 ## Development
 

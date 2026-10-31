@@ -1,20 +1,10 @@
-<p align="center"><img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/icon-180.png" width="96" alt="Plugin Dock"></p>
+# 插件坞 · Plugin Dock
 
-<h1 align="center">插件坞 · Plugin Dock</h1>
+> 把 DSH 左侧栏那一排插件入口，收进右下角一张可折叠的浮卡。**装好即接管**——左侧栏立刻清空，所有入口只在这一张卡片里。
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/dsh-plugin-dock"><img src="https://img.shields.io/npm/v/dsh-plugin-dock?color=2f6fed&label=npm" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/dsh-plugin-dock"><img src="https://img.shields.io/npm/dm/dsh-plugin-dock?color=2f6fed&label=downloads" alt="npm downloads"></a>
-  <img src="https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.2%20%3C0.3.0-2f6fed" alt="DSH >=0.2.1-rc.2 <0.3.0">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2f6fed" alt="MIT"></a>
-</p>
+[![npm version](https://img.shields.io/npm/v/dsh-plugin-dock?color=2f6fed&label=npm)](https://www.npmjs.com/package/dsh-plugin-dock) [![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.2%20%3C0.3.0-2f6fed)](docs/compat.md) [![MIT](https://img.shields.io/badge/license-MIT-2f6fed)](LICENSE)
 
-<p align="center">
-  把 DSH 左侧栏那一排插件入口，收进右下角一张可折叠的浮卡。<br>
-  <b>装好即接管</b>：左侧栏立刻清空，所有入口只在这一张卡片里。
-</p>
-
-![插件坞在 DSH Web 里展开的样子](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/hero.png)
+![插件坞：右下角高亮的就是收进了所有插件入口的浮卡](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/hero.png)
 
 ## 为什么装它
 
@@ -41,16 +31,13 @@ dsh plugin --profile web add dsh-plugin-dock
 
 ## 看一眼
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/collapsed.png" width="640" alt="收起态">
-  <br><sub>收起态：界面几乎和平时一样，只是右下角多一颗胶囊</sub>
-</p>
+**收起态**——界面几乎和平时一样，只是右下角多一颗胶囊：
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card.png" width="320" alt="展开的卡片">
-  <img src="https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card-installed.png" width="320" alt="已安装插件列表">
-  <br><sub>左：面板入口，点一行就切过去 · 右：已安装插件，带状态点，点一行进详情页</sub>
-</p>
+![收起态：右下角一颗胶囊](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/collapsed.png)
+
+**卡片本身**——上面是面板入口，点一行就切过去；下面是已安装插件（带运行状态点），点一行进详情页：
+
+![展开的卡片](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card.png) ![已安装插件列表](https://raw.githubusercontent.com/yuna78/dsh-plugin-dock/main/assets/screenshots/card-installed.png)
 
 ## 怎么用
 
@@ -80,7 +67,7 @@ dsh plugin --profile web add dsh-plugin-dock
 2. **侧栏底部的动作按钮不纳入**。`sidebar.footer.action` 里的是插件自己渲染的**动作按钮**（点击执行插件内部逻辑），不是可跳转的页面；slot API 不允许别的插件代为渲染或触发别人的组件，所以这里只收纳「面板入口」。
 3. 插件图标是各插件自己的组件实例，另一个插件无法渲染 → 面板行用「首字」做占位徽标；已安装插件那段用 Host 提供的 base64 图标。
 4. 面板行与安装包之间没有公开的归属关系（无法从包名映射到 panel id），所以两段分开显示，不做去重。
-5. 截图来自真实运行页面（隔离 profile + 无头 Chrome 实拍），但视觉与交互仍无法自动化断言；`verify/smoke.mjs` 只覆盖契约与静态检查。
+5. 截图是在**真实运行的 DSH 页面**里拍的（隔离 profile + 无头 Chrome + CDP 操作），不是拼图；但视觉与交互仍无法自动化断言，`verify/smoke.mjs` 只覆盖契约与静态检查。
 
 ## 开发
 
